@@ -12,6 +12,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     background: #eeee;
+    min-height: 100vh;
 }
 
 input[type='text'], button {
