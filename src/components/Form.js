@@ -11,6 +11,7 @@ const Form = ({ todoInput, setTodoInput }) => {
         type="text"
         value={todoInput}
         onChange={(e) => setTodoInput(e.target.value)}
+        placeholder="Create a new todo..."
       />
     </StyledForm>
   )

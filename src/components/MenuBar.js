@@ -1,15 +1,33 @@
 import React from 'react'
+import { Menu, FilterBar } from '../styles/MenuBar'
 
-export default function MenuBar() {
+export default function MenuBar({ length, setTodoStatus, todos, setTodos }) {
+  const handleFilter = (e) => {
+    const buttonType = e.target.innerText
+    if (buttonType === 'All') {
+      setTodoStatus('all')
+    } else if (buttonType === 'Active') {
+      setTodoStatus('active')
+    } else if (buttonType === 'Complete') {
+      setTodoStatus('completed')
+    }
+  }
+
+  const clearCompleted = () => {
+    const allTodos = [...todos]
+    const clearedTodos = allTodos.filter((todo) => todo.done === false)
+    setTodos(clearedTodos)
+  }
+
   return (
-    <div className="menu">
-      <p className="number">5 items left</p>
-      <div className="filter">
+    <Menu>
+      <p>{length} items left</p>
+      <FilterBar onClick={handleFilter}>
         <button>All</button>
         <button>Active</button>
         <button>Complete</button>
-      </div>
-      <button>Clear Complete</button>
-    </div>
+      </FilterBar>
+      <button onClick={clearCompleted}>Clear Complete</button>
+    </Menu>
   )
 }

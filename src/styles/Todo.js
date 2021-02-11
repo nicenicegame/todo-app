@@ -14,6 +14,7 @@ export const TodoItem = styled.div`
 
     &.todo-done {
       text-decoration: line-through;
+      opacity: 0.3;
     }
   }
 `
@@ -45,10 +46,16 @@ export const CustomCheckBox = styled.div`
   img {
     pointer-events: none;
     opacity: 0;
+    user-select: none;
   }
 
   &.checked {
-    background: black;
+    border: none;
+    background: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
 
     img {
       opacity: 1;

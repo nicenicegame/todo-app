@@ -2,12 +2,12 @@ import React from 'react'
 import { TodoItem, CheckBox, CustomCheckBox } from '../styles/Todo'
 import Check from '../images/icon-check.svg'
 
-export default function Todo({ id, name, done, todos, setTodos }) {
+export default function Todo({ id, name, done, shownTodos, setShownTodos }) {
   const handleTodoDone = () => {
-    const newTodos = [...todos]
+    const newTodos = [...shownTodos]
     const thisTodo = newTodos.find((todo) => todo.id === id)
     thisTodo.done = !done
-    setTodos(newTodos)
+    setShownTodos(newTodos)
   }
 
   return (
