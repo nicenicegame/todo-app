@@ -8,9 +8,9 @@ import Todo from './components/Todo'
 import MenuBar from './components/MenuBar'
 import { v4 as uuidv4 } from 'uuid'
 
-const ALL = 'all'
-const ACTIVE = 'active'
-const COMPLETED = 'completed'
+export const ALL = 'all'
+export const ACTIVE = 'active'
+export const COMPLETED = 'completed'
 
 function App() {
   const [todoStatus, setTodoStatus] = useState(ALL)
@@ -44,12 +44,6 @@ function App() {
     setIsDarkMode(!isDarkMode)
   }
 
-  const submitTodo = (e) => {
-    e.preventDefault()
-    console.log(todoInput)
-    setTodoInput('')
-  }
-
   useEffect(() => {
     if (todoStatus === ALL) {
       setShownTodos(todos)
@@ -70,7 +64,8 @@ function App() {
       <TodoApp>
         <Nav handleToggleMode={handleToggleMode} isDarkMode={isDarkMode} />
         <Form
-          onSubmit={submitTodo}
+          todos={todos}
+          setTodos={setTodos}
           todoInput={todoInput}
           setTodoInput={setTodoInput}
         />

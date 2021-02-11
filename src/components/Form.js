@@ -1,9 +1,23 @@
 import React from 'react'
 import { CheckBox, CustomCheckBox, StyledForm } from '../styles/Form'
+import { v4 as uuidv4 } from 'uuid'
 
-const Form = ({ todoInput, setTodoInput }) => {
+const Form = ({ todoInput, setTodoInput, todos, setTodos }) => {
+  const submitTodo = (e) => {
+    e.preventDefault()
+    if (!todoInput) return
+
+    const newTodo = {
+      id: uuidv4(),
+      name: todoInput,
+      done: false,
+    }
+    setTodos([...todos, newTodo])
+    setTodoInput('')
+  }
+
   return (
-    <StyledForm>
+    <StyledForm onSubmit={submitTodo}>
       <CheckBox>
         <CustomCheckBox />
       </CheckBox>

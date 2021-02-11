@@ -1,15 +1,16 @@
 import React from 'react'
 import { Menu, FilterBar } from '../styles/MenuBar'
+import { ALL, ACTIVE, COMPLETED } from '../App'
 
 export default function MenuBar({ length, setTodoStatus, todos, setTodos }) {
   const handleFilter = (e) => {
     const buttonType = e.target.innerText
     if (buttonType === 'All') {
-      setTodoStatus('all')
+      setTodoStatus(ALL)
     } else if (buttonType === 'Active') {
-      setTodoStatus('active')
+      setTodoStatus(ACTIVE)
     } else if (buttonType === 'Complete') {
-      setTodoStatus('completed')
+      setTodoStatus(COMPLETED)
     }
   }
 
