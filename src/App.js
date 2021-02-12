@@ -80,6 +80,8 @@ function App() {
               done={todo.done}
               shownTodos={shownTodos}
               setShownTodos={setShownTodos}
+              todos={todos}
+              setTodos={setTodos}
             />
           ))}
         </TodoList>

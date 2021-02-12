@@ -9,9 +9,9 @@ const Nav = ({ handleToggleMode, isDarkMode }) => {
       <h1>Todo</h1>
       <ToggleModeButton onClick={handleToggleMode}>
         {isDarkMode ? (
-          <img src={Moon} alt="moon" />
-        ) : (
           <img src={Sun} alt="sun" />
+        ) : (
+          <img src={Moon} alt="moon" />
         )}
       </ToggleModeButton>
     </StyledNav>

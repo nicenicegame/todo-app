@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 
+export const StyledCross = styled.img`
+  cursor: pointer;
+  display: none;
+`
+
 export const TodoItem = styled.div`
+  padding-right: 1.5rem;
   display: flex;
   flex-basis: 1;
   align-items: center;
@@ -16,6 +22,10 @@ export const TodoItem = styled.div`
       text-decoration: line-through;
       opacity: 0.3;
     }
+  }
+
+  &:hover ${StyledCross} {
+    display: block;
   }
 `
 
