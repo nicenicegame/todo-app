@@ -11,4 +11,6 @@ export const BGDesktopLight = styled.img`
   left: 0;
   z-index: -5;
   width: 100%;
+  height: 40vh;
+  object-fit: cover;
 `

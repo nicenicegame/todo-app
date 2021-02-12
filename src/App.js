@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import BGLight from './images/bg-desktop-light.jpg'
 import GlobalStyles from './styles/GlobalStyles'
-import { TodoApp, BGDesktopLight } from './styles/Main'
+import { TodoApp } from './styles/Main'
+import Background from './components/Background'
 import Nav from './components/Nav'
 import Form from './components/Form'
 import TodoList from './components/TodoList'
@@ -62,7 +62,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <BGDesktopLight src={BGLight} alt="Background" />
+      <Background isDarkMode={isDarkMode} />
       <TodoApp>
         <Nav handleToggleMode={handleToggleMode} isDarkMode={isDarkMode} />
         <Form
