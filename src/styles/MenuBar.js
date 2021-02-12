@@ -20,4 +20,8 @@ export const FilterBar = styled.div`
   button {
     margin: 0 0.5rem;
   }
+
+  button.active {
+    color: hsl(220, 98%, 61%);
+  }
 `

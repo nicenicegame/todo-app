@@ -44,6 +44,7 @@ export const CheckBox = styled.div`
 `
 
 export const CustomCheckBox = styled.div`
+  position: relative;
   border-radius: 50%;
   border: 0.5px solid rgba(0, 0, 0, 0.2);
   width: 25px;
@@ -70,5 +71,33 @@ export const CustomCheckBox = styled.div`
     img {
       opacity: 1;
     }
+  }
+
+  &.checked:hover::after {
+    opacity: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: white;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+    border: none;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 `

@@ -87,6 +87,7 @@ function App() {
         </TodoList>
         <MenuBar
           length={shownTodos.length}
+          todoStatus={todoStatus}
           setTodoStatus={setTodoStatus}
           todos={todos}
           setTodos={setTodos}
